@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+  <title>Quick Sort</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<p>
+def swap(li,first,last) :
+<br>    tmp = li[first]
+<br>    li[first] = li[last]
+<br>    li[last] = tmp
+<br><br>def partition(li,left,right) :
+<br>    key = li[left]
+<br>    first, last = left+1, right
+<br>    while (first<last) :
+<br>        while (key>li[first]) and (first<right):
+<br>            first+=1
+<br>        while (key<li[last]) and (last>left):
+<br>            last-=1
+<br>        if last<=first :
+<br>            swap(li,left,last)
+<br>            break
+<br>        swap(li,first,last) # 일반적으로 p보다 크고 작은 값 위치 변경
+<br>    return last
+<br><br>def quick_sort(li,left,right) :
+<br>    if left<right : #len(li) => x , li는 고정이다.
+<br>        q = partition(li,left, right)
+<br>        quick_sort(li,left,q-1)
+<br>        quick_sort(li,q+1,right)
+<br><br>arr = [5,2,7,9,1,-1,3,6,4]
+<br>quick_sort(arr,0,len(arr)-1) # index
+<br>print([i for i in arr])
+</p>
+<p style="margin-top:40px;">
+Quick sort를 파이썬으로 작성해보았다.
+<br>Quick sort가 어떤 방식으로 작동하는지 이해하고 이를 직접 코드로 짜보았는데
+<br><br><strong>"내가 어떤 반복문을 돌릴때,무한루프를 돌게 되지는 않을지 양극단에서 생각해보아야 겠다"</strong>
+<br><strong>"q라는 분기(?)점을 만들어 어떤 대상을 파고드는 방식"</strong>
+<br><strong>"정석인 알고리즘을 거의 처음으로 공부하니 컴퓨팅적 사고를 익히는 느낌,어떻게 코드가 구현될지"</strong>
+<br><br>등 을 생각해보는 시간이 된 것 같다.
+</p>
+</body>
