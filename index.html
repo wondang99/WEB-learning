@@ -12,20 +12,13 @@
 <body>
 <h1>STUDY In Army</h1>
 <ul>
-  <li><a href="https://wondang99.github.io/WEB-learning/Algorithm STUDY.html" title="Algorithm Diary">Algorithm</a></li>
+  <li><a href="#!Algorithm STUDY" title="Algorithm Diary" onclick="fetchPage('Algorithm STUDY')">Algorithm</a></li>
   <li>Web coding</li>
   <li>Network</li>
 <article>
     
 </article>
 </ul>
-    <input type="button" value="reveise content using fetch(ajax)" onclick="
-      fetch('index').then(function(response){
-       response.text().then(function(text){
-         document.querySelector('article').innerHTML = text ;
-       })
-      })
-    ">
     <input type="button" value="alert using fetch api" onclick="
       fetch('Quick Sort').then(function(response){
        response.text().then(function(text){
@@ -36,14 +29,25 @@
   <div id="map" style="width:100%;height:400px;"></div>
   
   <script>
-  var map = new naver.maps.Map('map', {
-    center: new naver.maps.LatLng(37.3595704, 127.105399),
-    zoom: 10
+    function fetchPage(name){
+      fetch(name).then(function(response){
+       response.text().then(function(text){
+         document.querySelector('article').innerHTML = text ;
+       })
+      });
+    }
+    if(location.hash){
+      console.log(location.hash.substr(1));
+    } else {
+    }
+    var map = new naver.maps.Map('map', {
+      center: new naver.maps.LatLng(37.3595704, 127.105399),
+      zoom: 10
     });
 
-    var marker = new naver.maps.Marker({
-    position: new naver.maps.LatLng(37.3595704, 127.105399),
-    map: map
+      var marker = new naver.maps.Marker({
+      position: new naver.maps.LatLng(37.3595704, 127.105399),
+      map: map
     });
 
   </script>
