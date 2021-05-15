@@ -15,7 +15,24 @@
   <li><a href="https://wondang99.github.io/WEB-learning/Algorithm STUDY.html" title="Algorithm Diary">Algorithm</a></li>
   <li>Web coding</li>
   <li>Network</li>
+<article>
+    
+</article>
 </ul>
+    <input type="button" value="reveise content using fetch(ajax)" onclick="
+      fetch('index').then(function(response){
+       response.text().then(function(text){
+         document.querySelector('article').innerHTML = text ;
+       })
+      })
+    ">
+    <input type="button" value="alert using fetch api" onclick="
+      fetch('Quick Sort').then(function(response){
+       response.text().then(function(text){
+         alert(text);
+       })
+      })
+    ">
   <div id="map" style="width:100%;height:400px;"></div>
   
   <script>
