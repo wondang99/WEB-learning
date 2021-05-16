@@ -11,14 +11,13 @@
 
 <body>
 <h1>STUDY In Army</h1>
-<ul>
-  <li><a href="#!Algorithm STUDY" title="Algorithm Diary" onclick="fetchPage('Algorithm STUDY')">Algorithm</a></li>
-  <li>Web coding</li>
-  <li>Network</li>
+<ul id = "nav">
+
+</ul>
 <article>
     
 </article>
-</ul>
+
     <input type="button" value="alert using fetch api" onclick="
       fetch('Quick Sort').then(function(response){
        response.text().then(function(text){
@@ -50,6 +49,11 @@
       position: new naver.maps.LatLng(37.3595704, 127.105399),
       map: map
     });
+    fetch(list).then(function(response){
+       response.text().then(function(text){
+         document.querySelector('#nav').innerHTML = text ;
+       })
+      });
 
   </script>
 
